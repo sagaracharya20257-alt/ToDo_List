@@ -1,0 +1,42 @@
+import { useState } from "react";
+import { authAPI } from "../api/authAPI.js";
+
+export default function LoginForm({ setUser }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const user = await authAPI({ username, password });
+      setUser(user);
+      localStorage.setItem("user", JSON.stringify(user));
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>Login</h2>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      <input
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        required
+      />
+      <br />
+      <input
+        placeholder="Password"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      <br />
+      <button type="submit">Login</button>
+    </form>
+  );
+}

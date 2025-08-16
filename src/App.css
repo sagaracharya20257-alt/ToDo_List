@@ -1,0 +1,119 @@
+/* Global */
+body {
+  background-color: #f7f9fc;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* Container */
+.todo-container {
+  background: #fff;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+}
+
+/* Header */
+.todo-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  color: #333;
+}
+
+/* Logout Button */
+.logout-btn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #d32f2f;
+}
+
+/* Add todo */
+.add-todo {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-todo input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.add-todo button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-todo button:hover {
+  background: #388e3c;
+}
+
+/* Todo List */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f1f1;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.6rem;
+  border-radius: 8px;
+}
+
+.todo-item label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.todo-item input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+/* Strikethrough when checked */
+.todo-item.completed label span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Delete Button */
+.todo-item button {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.todo-item button:hover {
+  background: #b71c1c;
+}
